@@ -1,0 +1,26 @@
+#  Two-week gfs bugfix experiment
+
+# Define model names and path to matchup file (can be zarr or netCDF)
+models:
+  base_case: /scratch3/NCEPDEV/marine/Edwin.Rainville/sofar-wave-model-eval-20250712-20250724/data/zarr_matchups/base_case_sofar_matchup_2025-07-12_to_2025-07-24.zarr
+  retrov17: /scratch3/NCEPDEV/marine/Edwin.Rainville/sofar-wave-model-eval-20250712-20250724/data/zarr_matchups/retrov17_sofar_matchup_2025-07-12_to_2025-07-24.zarr
+  gwdupdate: /scratch3/NCEPDEV/marine/Edwin.Rainville/sofar-wave-model-eval-20250712-20250724/data/zarr_matchups/gwdupdate_sofar_matchup_2025-07-12_to_2025-07-24.zarr
+  bugfix: /scratch3/NCEPDEV/marine/Edwin.Rainville/sofar-wave-model-eval-20250712-20250724/data/zarr_matchups/bugfix_sofar_matchup_2025-07-12_to_2025-07-24.zarr
+
+# Lists of variables to compute statistics for
+variables:
+  - hs
+  - wnd
+  - mwp
+
+# List of statistics to compute (options: mse, rmse, corr)
+statistics:
+  - mse
+  - rmse
+  - corr
+
+# Window to compute the statistics over
+window_hours: 10.0
+
+# Output directory to put the plots
+outdir: /scratch3/NCEPDEV/marine/Edwin.Rainville/sofar-wave-model-eval-20250712-20250724/plots
